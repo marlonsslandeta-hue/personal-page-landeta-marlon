@@ -1,0 +1,647 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VYBE | Fashion Store</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #222;
+        }
+
+        /* ENCABEZADO */
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 8%;
+            background-color: white;
+        }
+
+        .logo {
+            font-size: 35px;
+            font-weight: bold;
+            letter-spacing: 5px;
+        }
+
+        .logo span {
+            color: #c49a6c;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #222;
+            margin: 0 15px;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: #c49a6c;
+        }
+
+        .icons {
+            font-size: 23px;
+        }
+
+        /* PORTADA */
+
+        .hero {
+            height: 600px;
+
+            background-image:
+            linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)),
+            url('https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=1600');
+
+            background-size: cover;
+            background-position: center 35%;
+
+            display: flex;
+            align-items: center;
+            padding-left: 10%;
+        }
+
+        .hero-content {
+            color: white;
+            max-width: 500px;
+        }
+
+        .hero-content h1 {
+            font-size: 70px;
+            margin-bottom: 20px;
+            letter-spacing: 5px;
+        }
+
+        .hero-content p {
+            font-size: 19px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 35px;
+            background-color: white;
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #c49a6c;
+            color: white;
+        }
+
+        /* TITULOS */
+
+        .section-title {
+            text-align: center;
+            margin: 70px 0 40px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            letter-spacing: 3px;
+        }
+
+        .section-title p {
+            margin-top: 12px;
+            color: #888;
+        }
+
+        /* CATEGORIAS */
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 0 8%;
+        }
+
+        .category {
+            position: relative;
+            height: 420px;
+            overflow: hidden;
+        }
+
+        .category img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .category:hover img {
+            transform: scale(1.08);
+        }
+
+        .category h3 {
+            position: absolute;
+            bottom: 25px;
+            left: 25px;
+            color: white;
+            font-size: 30px;
+            text-transform: uppercase;
+        }
+
+        /* PRODUCTOS */
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            padding: 0 8%;
+        }
+
+        .product {
+            text-align: left;
+        }
+
+        .product img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            transition: 0.4s;
+        }
+
+        .product img:hover {
+            transform: scale(1.03);
+        }
+
+        .product h3 {
+            margin-top: 15px;
+            font-size: 17px;
+        }
+
+        .product p {
+            margin-top: 8px;
+            color: #888;
+        }
+
+        .price {
+            color: #222 !important;
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+        .buy {
+            display: block;
+            background: #222;
+            color: white;
+            padding: 13px;
+            text-decoration: none;
+            margin-top: 15px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .buy:hover {
+            background: #c49a6c;
+        }
+
+        /* BANNER PROMOCIONAL */
+
+        .banner {
+            margin-top: 90px;
+            height: 400px;
+
+            background-image:
+            linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+            url('https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1600');
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .banner h2 {
+            font-size: 45px;
+            letter-spacing: 4px;
+        }
+
+        .banner p {
+            margin: 20px 0 30px;
+            font-size: 18px;
+        }
+
+        /* INFORMACION */
+
+        .information {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            text-align: center;
+            padding: 55px 8%;
+            gap: 30px;
+        }
+
+        .information h3 {
+            margin-bottom: 12px;
+        }
+
+        .information p {
+            color: #888;
+            font-size: 14px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        footer h2 {
+            font-size: 32px;
+            letter-spacing: 5px;
+        }
+
+        footer p {
+            margin: 15px;
+            color: #bbb;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+        }
+
+        footer a:hover {
+            color: #c49a6c;
+        }
+
+        /* DISEÑO RESPONSIVE */
+
+        @media (max-width: 768px) {
+
+            header {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .hero {
+                height: 450px;
+                padding: 8%;
+            }
+
+            .hero-content h1 {
+                font-size: 45px;
+            }
+
+            .categories {
+                grid-template-columns: 1fr;
+            }
+
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .information {
+                grid-template-columns: 1fr;
+            }
+
+            .banner h2 {
+                font-size: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .product img {
+                height: 400px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+
+    <header>
+
+        <div class="logo">
+            VYBE<span>.</span>
+        </div>
+
+        <nav>
+            <a href="#">Inicio</a>
+            <a href="#mujer">Mujer</a>
+            <a href="#hombre">Hombre</a>
+            <a href="#coleccion">Colección</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+
+        <div class="icons">
+            ♡ 🛍
+        </div>
+
+    </header>
+
+
+    <!-- PORTADA PRINCIPAL -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+                NEW<br>
+                COLLECTION
+            </h1>
+
+            <p>
+                Descubre tu estilo.<br>
+                Viste diferente. Sé auténtico.
+            </p>
+
+            <a href="#coleccion" class="btn">
+                DESCUBRIR AHORA
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- CATEGORIAS -->
+
+    <section id="mujer">
+
+        <div class="section-title">
+
+            <h2>DESCUBRE TU ESTILO</h2>
+
+            <p>
+                Encuentra las prendas que representan tu personalidad.
+            </p>
+
+        </div>
+
+
+        <div class="categories">
+
+            <div class="category">
+
+                <img
+                src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=700"
+                alt="Moda femenina">
+
+                <h3>Mujer</h3>
+
+            </div>
+
+
+            <div class="category">
+
+                <img
+                src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=700"
+                alt="Moda juvenil">
+
+                <h3>Casual</h3>
+
+            </div>
+
+
+            <div class="category" id="hombre">
+
+                <img
+                src="https://images.unsplash.com/photo-1516257984-b1b4d707412e?w=700"
+                alt="Moda masculina">
+
+                <h3>Hombre</h3>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRODUCTOS DESTACADOS -->
+
+    <section id="coleccion">
+
+        <div class="section-title">
+
+            <h2>NEW ARRIVALS</h2>
+
+            <p>
+                Las últimas tendencias están aquí.
+            </p>
+
+        </div>
+
+
+        <div class="products">
+
+
+            <div class="product">
+
+                <img
+                src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=600"
+                alt="Vestido elegante">
+
+                <h3>Vestido Elegante</h3>
+
+                <p>Colección Mujer</p>
+
+                <p class="price">$39.99</p>
+
+                <a href="#" class="buy">
+                    COMPRAR
+                </a>
+
+            </div>
+
+
+            <div class="product">
+
+                <img
+                src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=600"
+                alt="Blusa casual">
+
+                <h3>Blusa Casual</h3>
+
+                <p>New Collection</p>
+
+                <p class="price">$24.99</p>
+
+                <a href="#" class="buy">
+                    COMPRAR
+                </a>
+
+            </div>
+
+
+            <div class="product">
+
+                <img
+                src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=600"
+                alt="Outfit moderno">
+
+                <h3>Outfit Moderno</h3>
+
+                <p>Colección Exclusiva</p>
+
+                <p class="price">$34.99</p>
+
+                <a href="#" class="buy">
+                    COMPRAR
+                </a>
+
+            </div>
+
+
+            <div class="product">
+
+                <img
+                src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=600"
+                alt="Conjunto femenino">
+
+                <h3>Conjunto Fashion</h3>
+
+                <p>Temporada 2026</p>
+
+                <p class="price">$44.99</p>
+
+                <a href="#" class="buy">
+                    COMPRAR
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BANNER PUBLICITARIO -->
+
+    <section class="banner">
+
+        <div>
+
+            <h2>YOUR STYLE.<br>YOUR RULES.</h2>
+
+            <p>
+                La moda es una forma de expresar quién eres.
+            </p>
+
+            <a href="#coleccion" class="btn">
+                VER COLECCIÓN
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- INFORMACION DE LA TIENDA -->
+
+    <section class="information">
+
+        <div>
+
+            <h3>🚚 Envíos</h3>
+
+            <p>
+                Recibe tus prendas donde estés.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>💳 Pagos seguros</h3>
+
+            <p>
+                Compra de manera fácil y segura.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>✨ Últimas tendencias</h3>
+
+            <p>
+                Siempre a la moda y con estilo.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- PIE DE PAGINA -->
+
+    <footer id="contacto">
+
+        <h2>VYBE.</h2>
+
+        <p>
+            WEAR YOUR VIBE.
+        </p>
+
+        <br>
+
+        <div>
+
+            <a href="#">Instagram</a>
+
+            <a href="#">Facebook</a>
+
+            <a href="#">WhatsApp</a>
+
+        </div>
+
+        <br>
+
+        <p>
+            © 2026 VYBE FASHION STORE.
+            Todos los derechos reservados.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
